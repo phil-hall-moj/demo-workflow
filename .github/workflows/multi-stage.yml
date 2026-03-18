@@ -16,3 +16,15 @@ jobs:
     needs: build
     steps:
       - run: echo "Running tests..."
+ 
+  scan:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - run: echo "security scanning ...."
+ 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: scan
+    steps:
+      - run: echo "security scanning ...."
